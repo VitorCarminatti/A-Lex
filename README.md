@@ -1,2 +1,2 @@
 # Analisador Léxico
-Trabalho Final de Sistemas distribuidos.
+Trabalho Final de Linguagens Formais.
