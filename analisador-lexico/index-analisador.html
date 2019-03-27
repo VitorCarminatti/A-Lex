@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Analisador Léxico / Jonas Augusto Bieluczyk</title>
+	<link href="https://fonts.googleapis.com/css?family=Exo+2:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+	<!-- invoca o css -->
+	<link rel="stylesheet" type="text/css" href="analisador.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="div-title">
+			<p class="title">Analisador Léxico</p>
+			<p class="sub-title">Jonas Augusto Bieluczyk</p>
+		</div>
+		<div class="section">
+			<div class="gerador">
+				<!-- classe aonde será adicionado as palavras no dicionario -->
+				<div class="div_insertWord">
+					<form id="words">
+						<p>Inserir palavra no dicionário</p>
+						<input type="text" class="main_class" id="register_words" placeholder="Separe as palavras com espaço (gato peixe sapo...)"></input>					
+						<small>Não deixe espaço nas palavras, somente use para separar uma da outra. Ex: 'gato ' </small>
+						<div class="form_actions">
+							<input type="reset" id="reset" class="btn-input" value="Limpar" />
+							<input type="submit" class="btn-input" value="Salvar" />
+						</div>
+					</form>
+					<div class="save-words-container">
+						<p class="save-words-title">Palavras salvas: </p>
+						<p id="save-words"></p>
+					</div>
+				</div>
+	
+				<!-- classe aonde será procurado as palavras no dicionario -->
+				<div class="contaier_search">
+					<div class="div_searchWords">
+						  <p>Buscar palavras</p>
+						  <div class="insert-words">
+							<form>
+								<input type="text" id="getWords" placeholder="Digite as palavras aqui" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Borda inicial em azul sem nada, com o id="automato" será sobrescrita com o automato formado -->
+			<div class="container-table">
+				<table id="automato">
+					<tbody>
+						<tr class="tr-header">
+							<th>Estado</th>
+							<th>a</th>
+							<th>b</th>
+							<th>c</th>
+							<th>d</th>
+							<th>e</th>
+							<th>f</th>
+							<th>g</th>
+							<th>h</th>
+							<th>i</th>
+							<th>j</th>
+							<th>k</th>
+							<th>l</th>
+							<th>m</th>
+							<th>n</th>
+							<th>o</th>
+							<th>p</th>
+							<th>q</th>
+							<th>r</th>
+							<th>s</th>
+							<th>t</th>
+							<th>u</th>
+							<th>v</th>
+							<th>w</th>
+							<th>x</th>
+							<th>y</th>
+							<th>z</th>
+						</tr>
+						<tr class="estado_0">
+							<td>q0</td>
+							<td class="letra_a"></td>
+							<td class="letra_b"></td>
+							<td class="letra_c"></td>
+							<td class="letra_d"></td>
+							<td class="letra_e"></td>
+							<td class="letra_f"></td>
+							<td class="letra_g"></td>
+							<td class="letra_h"></td>
+							<td class="letra_i"></td>
+							<td class="letra_j"></td>
+							<td class="letra_k"></td>
+							<td class="letra_l"></td>
+							<td class="letra_m"></td>
+							<td class="letra_n"></td>
+							<td class="letra_o"></td>
+							<td class="letra_p"></td>
+							<td class="letra_q"></td>
+							<td class="letra_r"></td>
+							<td class="letra_s"></td>
+							<td class="letra_t"></td>
+							<td class="letra_u"></td>
+							<td class="letra_v"></td>
+							<td class="letra_w"></td>
+							<td class="letra_x"></td>
+							<td class="letra_y"></td>
+							<td class="letra_z"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<!-- invoca o javascript -->
+	<script type="text/javascript" src="analisador.js"></script>
+</body>
+</html>
