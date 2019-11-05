@@ -3,20 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>A-Lex / Vitor Carminatti</title>
-	<link href="https://fonts.googleapis.com/css?family=Exo+2:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
-	<!-- invoca o css -->
-	<link rel="stylesheet" type="text/css" href="analisador.css" />
+	<title>A-Lex</title>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="a-lex.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="elementary.png" />
 </head>
 <body>
+	<div class="div-title">
+		<p class="title">A-Lex</p>
+	</div>
 	<div class="container">
-		<div class="div-title">
-			<p class="title">A-Lex</p>
-			<p class="sub-title">Vitor Carminatti</p>
-		</div>
 		<div class="section">
 			<div class="gerador">
-				<!-- classe aonde será adicionado as palavras no dicionario -->
 				<div class="div_insertWord">
 					<form id="words">
 						<div id="input_and_text">
@@ -33,7 +31,6 @@
 					</div>
 				</div>
 	
-				<!-- classe aonde será procurado as palavras no dicionario -->
 				<div class="contaier_search">
 					<div class="div_searchWords">
 						  <p>Buscar palavras</p>
@@ -46,7 +43,6 @@
 				</div>
 			</div>
 	
-			<!-- Borda inicial em azul sem nada, com o id="automato" será sobrescrita com o automato formado -->
 			<div class="container-table">
 				<table id="automato">
 					<tbody>
@@ -115,7 +111,6 @@
 	</div>
 
 	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-	<!-- invoca o javascript -->
-	<script type="text/javascript" src="analisador.js"></script>
+	<script type="text/javascript" src="a-lex.js"></script>
 </body>
 </html>
