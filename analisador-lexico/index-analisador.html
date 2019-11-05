@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Analisador Léxico / Jonas Augusto Bieluczyk</title>
+	<title>A-Lex / Vitor Carminatti</title>
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:300,300i,400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
 	<!-- invoca o css -->
 	<link rel="stylesheet" type="text/css" href="analisador.css" />
@@ -11,24 +11,24 @@
 <body>
 	<div class="container">
 		<div class="div-title">
-			<p class="title">Analisador Léxico</p>
-			<p class="sub-title">Jonas Augusto Bieluczyk</p>
+			<p class="title">A-Lex</p>
+			<p class="sub-title">Vitor Carminatti</p>
 		</div>
 		<div class="section">
 			<div class="gerador">
 				<!-- classe aonde será adicionado as palavras no dicionario -->
 				<div class="div_insertWord">
 					<form id="words">
-						<p>Inserir palavra no dicionário</p>
-						<input type="text" class="main_class" id="register_words" placeholder="Separe as palavras com espaço (gato peixe sapo...)"></input>					
-						<small>Não deixe espaço nas palavras, somente use para separar uma da outra. Ex: 'gato ' </small>
+						<div id="input_and_text">
+							<input type="text" class="main_class" id="register_words" placeholder="Adicione palavras separadas por espaço"></input>
+						</div>
 						<div class="form_actions">
 							<input type="reset" id="reset" class="btn-input" value="Limpar" />
 							<input type="submit" class="btn-input" value="Salvar" />
 						</div>
 					</form>
 					<div class="save-words-container">
-						<p class="save-words-title">Palavras salvas: </p>
+						<p class="save-words-title">Dicionário: </p>
 						<p id="save-words"></p>
 					</div>
 				</div>
