@@ -79,20 +79,17 @@ function generate_lines() {
 
 function generate_submitForm() {
   var palavras = $("#register_words").val();
-  var $save_word = $("#save-words");
+  var $save_word = $("#save-words ul");
   palavras = palavras.toLowerCase();
   palavras = palavras.split(" ");
   for (var i = 0; i < palavras.length; i++) {
     if (words.indexOf(palavras[i]) < 0 && palavras[i].length > 0) {
-      if (words.length <= 0) {
-        $save_word.append(palavras[i]);
-      } else {
-        $save_word.append(", " + palavras[i]);
-      }
+      $save_word.append(`<li>${palavras[i]}</li>`);
       words.push(palavras[i]);
     }
   }
 }
+
 var words = [];
 var states = [[]];
 var statesGlobal = 0;
