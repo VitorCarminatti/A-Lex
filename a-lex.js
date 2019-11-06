@@ -5,7 +5,7 @@ $(document).ready(function() {
 $(function() {
   $("#words").submit(function(e) {
     var inputWord = $("#register_words");
-    if (!testWord(inputWord.val())) {
+    if (!test_word(inputWord.val())) {
       generate_submitForm();
       register_state();
       Tabela = generate_lines();
@@ -26,7 +26,7 @@ $(function() {
   });
 });
 
-function testWord(word) {
+function test_word(word) {
   let exprRegular = /([^A-Za-z_])+$/;
   if (exprRegular.test(word)) {
     return true;
@@ -160,21 +160,21 @@ function valida_palavra() {
       palavras[i].charCodeAt(0) >= primeiro.charCodeAt(0) &&
       palavras[i].charCodeAt(0) <= ultimo.charCodeAt(0)
     ) {
-      highlightState(states, palavras[i]);
+      line_column_highlight(states, palavras[i]);
       if (Tabela[states][palavras[i]] != "-") {
         states = Tabela[states][palavras[i]];
-        onAccept();
+        set_valid();
       } else {
-        onError();
+        set_error();
         break;
       }
     } else if (palavras[i] == " ") {
-      highlightState(states, palavras[i]);
+      line_column_highlight(states, palavras[i]);
       if (Tabela[states]["final"]) {
         states = 0;
         $("#getWords").val("");
       } else {
-        onError();
+        set_error();
         break;
       }
     } else {
@@ -184,17 +184,17 @@ function valida_palavra() {
   }
 }
 
-function onError() {
+function set_error() {
   $("#getWords").removeClass("acerto");
   $("#getWords").addClass("erro");
 }
 
-function onAccept() {
+function set_valid() {
   $("#getWords").addClass("acerto");
   $("#getWords").removeClass("erro");
 }
 
-function highlightState(state, letter) {
+function line_column_highlight(state, letter) {
   $("#automato tr").removeClass("states_selecionado");
   $("#automato td").removeClass("letra_selecionada");
   $("#automato .states_" + state).addClass("states_selecionado");
