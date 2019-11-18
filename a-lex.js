@@ -230,6 +230,6 @@ function clean() {
 function generate_initial_table() {
   for (var i = 65; i <= 90; i++) {
     $(".tr-header").append("<th>" + String.fromCharCode(i) + "</th>");
-    $(".estado_0").append(`<td class="letra_${i}" />`);
+    $(".estado_0").append(`<td class="letra_${String.fromCharCode(i)}" />`);
   }
 }
