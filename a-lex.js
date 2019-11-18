@@ -1,11 +1,19 @@
 $(document).ready(function() {
   clean();
+  generate_initial_table();
 });
 
 $(function() {
   $("#words").submit(function(e) {
     var inputWord = $("#register_words");
-    if (!test_word(inputWord.val())) {
+    let result = [];
+
+    inputWord
+      .val()
+      .split(" ")
+      .forEach(word => result.push(!test_word(word)));
+
+    if (!result.some(word => word === false)) {
       generate_submitForm();
       register_state();
       Tabela = generate_lines();
@@ -82,12 +90,13 @@ function generate_submitForm() {
   var $save_word = $("#save-words ul");
   palavras = palavras.toLowerCase();
   palavras = palavras.split(" ");
-  for (var i = 0; i < palavras.length; i++) {
-    if (words.indexOf(palavras[i]) < 0 && palavras[i].length > 0) {
-      $save_word.append(`<li>${palavras[i]}</li>`);
-      words.push(palavras[i]);
+
+  palavras.forEach(palavra => {
+    if (words.indexOf(palavra) < 0 && palavra.length > 0) {
+      $save_word.append(`<li>${palavra}</li>`);
+      words.push(palavra);
     }
-  }
+  });
 }
 
 var words = [];
@@ -216,4 +225,11 @@ function clean() {
     $("#getWords").removeClass("acerto");
     $("#getWords").removeClass("erro");
   });
+}
+
+function generate_initial_table() {
+  for (var i = 65; i <= 90; i++) {
+    $(".tr-header").append("<th>" + String.fromCharCode(i) + "</th>");
+    $(".estado_0").append(`<td class="letra_${i}" />`);
+  }
 }
